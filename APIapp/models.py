@@ -8,3 +8,10 @@ class YourModel(models.Model):
 
     def __str__(self):
         return self.title
+    
+
+# Serializers.py - convert model to json
+class YourModelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = YourModel
+        fields = ['id', 'title', 'description', 'created_at']
